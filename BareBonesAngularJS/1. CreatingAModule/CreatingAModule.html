@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+   
+   <head>
+      <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>
+	  <script src = "app/mainApp.js"></script> <!--didn't need to create include header for angular file which is unusual, but did of course for main app-->
+   </head>
+   
+   <body ng-app = "mainApp">
+
+      <div ng-controller = "HelloController" >
+         <h2>Welcome {{helloTo.title}} to the world of Tutorialspoint!</h2>
+	
+      </div>
+         <p>Enter your Name: <input type = "text" ng-model = "search"></p>
+         <p>Hello ez two-way binding {{search}}!</p>      
+		 
+		 <!--based on intuition I was able to add the controller to the MVA template and change the tag name to reflect it and include it in folder and now works again as of 4/26/2017-->
+   </body>
+</html>
+
+
+
+<!--
+Generic Module Setup
+angular.module('myModule', []).config(function(injectables) {//provider-injector
+// This is an example of a config block.
+// You can have as many of these as you want.
+// You can only inject Providers (not instances) into config blocks.
+}).run(function(injectables) {//instance-injector}
+// This is an example of a run block.
+// You can have as many of these as you want.
+// You can only inject instances (not Providers) into run blocks.
+})-->
