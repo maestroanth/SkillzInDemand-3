@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+   
+   <head>
+      <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>
+	  <script src = "./app/mainApp.js"></script> <!--didn't need to create include header for angular file which is unusual, but did of course for main app-->
+      <script src="./app/event/eventModule.js"></script>
+   </head>
+   
+   <body ng-app = "mainApp">
+
+      <div ng-controller = "HelloController" >
+         <h2>Welcome {{helloTo.title}} to the world of Tutorialspoint!</h2>
+          <p>Enter your Name: <input type="text" ng-model="search"></p>
+          <p>These are bound within the div "HelloController"</p>
+          <p>Hello ez two-way binding {{search}}!</p>
+          <p>Hello ez two-way binding {{search}}!</p>
+        
+      </div>
+       <p>This is bound outside the div "HelloController"</p>
+       <p>Hello ez two-way binding {{search}}!</p>
+       <p> </p>
+       <p> </p>
+       <p> </p>
+       <div ng-controller="BitchCtrl">
+           <h2>Welcome to my professional app, <u>{{title}}!</u> </h2>
+           <h3>You're in what is called my second controller I aptly titled, "BitchCtrl".</h3>
+           <ul>
+               <li ng-click="setIndex(0)" ng-class="(index==0) ? 'active' : ''">
+                <a href="{{menu[0].href}}">{{menu[0].name}}</a>
+               </li>
+               <li ng-click="setIndex(1)" ng-class="(index==1) ? 'active' : ''">
+                   <a href="{{menu[1].href}}">{{menu[1].name}}</a>
+               </li>
+               <li>
+                  eventTitle = {{itemTitle}} Cannot access itemTitle here cuz it's only in the child controller {{title}}
+               </li>
+           </ul>
+           <!-- this can also be a child controller if needed -->
+           <div ng-controller="BottomBitchCtrl">
+               <h2>You are now promoted to be my {{title}} in my third controller aptly titled "BottomBitchCtrl" which is a child controller of "BitchCtrl"</h2>
+               <ul>
+                   <li>{{$parent.title}} <--referring to parent</li>
+                   <li> if title isn't redeclared in child, parent scope will be used</li>
+                   <li ng-click="setIndex(0)" ng-class="(index==0) ? 'active' : ''">
+                    MenuItem#1:   This is inherited from "EventCtrl" MenuItem#1:<a href="{{menu[0].href}}">{{menu[0].name}}</a>
+                   </li>
+                   <li> These are new only from "EventItemCtrl"</li>
+                   <li ng-click="setIndex(1)" ng-class="(index==1) ? 'active' : ''">
+                   <li> eventTitle = {{itemTitle}}</li>
+                      <li> eventDescription = {{description}}</li>
+                      <li> eventImage = {{imgSrc}}</li>
+                      <li> eventDate = {{date}}</li>
+                      <li>  Good job you can access all the children properties cuz you're my awesome {{title}}</li>
+                   
+               </ul>
+
+           </div>
+
+           <div ng-controller="BottomBitchCtrl as eventFoo"> <!--  Don't repeat eventFoo in nested controllers -->
+               <h2>Same shit but with "Controller as" Syntax instead of $scope</h2>
+               <ul>
+                   <li> My Bottom Bitche's Current Titty Size = {{eventFoo.tittysize}}</li>
+               </ul>
+
+           </div>
+       </div>
+       
+       
+		 <!--based on intuition I was able to add the controller to the MVA template and change the tag name to reflect it and include it in folder and now works again as of 4/26/2017-->
+   </body>
+</html>
+
+
+
+<!--
+Generic Module Setup
+angular.module('myModule', []).config(function(injectables) {//provider-injector
+// This is an example of a config block.
+// You can have as many of these as you want.
+// You can only inject Providers (not instances) into config blocks.
+}).run(function(injectables) {//instance-injector}
+// This is an example of a run block.
+// You can have as many of these as you want.
+// You can only inject instances (not Providers) into run blocks.
+})-->

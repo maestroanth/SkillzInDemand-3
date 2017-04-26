@@ -1,0 +1,62 @@
+MVA Tutorial 2
+
+What is a Controller?
+
+	A controller is a set of JS functions bound to a scope
+
+	The ng-controller directive tells Angular to instantiate the new controller object, and inject the new scope as a dependency
+
+	Contains business logic for the view
+
+	Best for adding logic
+
+	Avoid using to manipulate the DOM
+
+	*This is different than dotnet controllers! In dotnet MVC I believe the business logic is usually done in the model class (i.e. in the methods) or some other "external service"*
+
+Creating a Controller
+
+	Requires ng-controller directive
+
+	Add controller code to a module
+
+	Name your controller based on functionality
+
+	Controllers are named using came case (FistController)
+
+	Keep controllers lean
+
+What is $scope?
+
+	$scope is an object that refers to the app model
+
+	$scope provides the execution context for expressions
+
+	$scope is the glue between the controller and the view
+
+	Attach properties/functions to scope to make them available to the view
+
+	Any objects or primitives that is added to the $scope are considered model properties
+
+Understanding Scope
+
+	Child scopes prototypically inherit
+	
+	Isolate scopes do not
+
+	JavaScript Prototypical Inheritance: If it doesn't exist in current, it will go up the chain (parent). Hiding and shadowing of properties.
+
+	Best practice of always have a "." in models
+	
+	Can falsely make Angular seem "broken" if used incorrect (i.e. a parent creates a scope for child, but not in reverse)
+
+
+"Controller as" _____  Syntax
+
+	Defines a named scope
+
+	Defines properties on the function (Controller) and not the $scope
+
+	$scope is still useful for things like $watch (watching to see if a property changes)
+
+	Don't repeat the same ______ in nested controllers

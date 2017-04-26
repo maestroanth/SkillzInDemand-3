@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+ 
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>
+        <script src="./app/mainApp.js"></script> <!--didn't need to create include header for angular file which is unusual, but did of course for main app-->
+        <script src="./app/event/eventModule.js"></script>
+
+    <title>Contact</title>
+</head>
+<body ng-app = "mainApp"> <!--remember to add the reference to the app in all pages!!-->
+    <h2>Welcome {{title}} to my second controller called "EventCtrl" on my Contact page</h2>
+    <div ng-controller="EventCtrl">
+        <ul>
+            <li>
+                <a href="{{menu[0].href}}">{{menu[0].name}}</a>
+            </li>
+            <li>
+                <a href="{{menu[1].href}}">{{menu[1].name}}</a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
