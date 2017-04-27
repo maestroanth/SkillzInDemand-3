@@ -1,0 +1,37 @@
+MVA Angular Tutorial 3
+
+What is an Expression?
+	Javascript code snippets placed in bindings {{Hello Biatches!}}
+	Evaluated against a scope object
+	Forgiving, don't throw an error
+	Can use filters with expressions to format data
+	Expressions do not have access to window, document, or location
+
+Cheatsheet of everything an Expression can be in AngularJS at:
+http://teropa.info/images/angular_expressions_cheatsheet.pdf
+
+Cannot do complicated if/else statements or large logic flows, but can do ternary a ? b : c
+
+One-time binding. Binds only once instead of it constantly checking (like use for titles ::event.title)
+
+What are Filters?
+	Formats the value of an expression
+	Filters can be applied in the view
+	{{employees.array | filter: 's'}}
+	Filters applied in the view can be costly as they are re-evaluated
+	Filters can be used elsewhere: controllers, services etc.
+
+Built-in Filters
+	orderBy
+	limitTo
+	lowercase
+	uppercase
+	filter (filter by a search)
+	currency
+	number
+	date
+
+Creating a Custom Filter
+	Register a new filter factory function
+	Return a filter function that takes the input value as the first argument
+	Filter function should be stateless (typically)
