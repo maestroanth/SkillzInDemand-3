@@ -1,0 +1,14 @@
+﻿<div ng-repeat="hoe in bitches | orderBy: 'date' | searchBitches:search | limitTo: '1000'">
+    <!-- best foreach loop eva!-->
+    <div id="{{hoe.name}}">
+        <h4>Name: {{hoe.name}}</h4>
+        <p>Date Found: {{hoe.date | date:'MMMM, dd yyyy'}}</p>
+        <p>Titty Size: <i>{{hoe.tittySize}}</i></p>
+        <p>Whad da' biatch looks like: "{{hoe.description}}"</p>
+        <!--cannot figure out how to show null message with angular-->
+        <p ng-hide="{{hoe.name}}">
+            document.getElementById('bitchToggle').innerHTML == 'Sorry, we have no available bitches of your desired Titty Size. Check again later!!<br>';
+        </p>
+    </div>
+    <div id="bitchToggle"></div>
+</div>

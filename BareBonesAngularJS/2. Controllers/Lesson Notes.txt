@@ -1,4 +1,4 @@
-MVA Tutorial 2
+MVA Angular Lesson 2
 
 What is a Controller?
 

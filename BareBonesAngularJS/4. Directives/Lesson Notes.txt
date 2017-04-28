@@ -1,0 +1,55 @@
+MVA Angular Lesson 4
+
+What are Directives?
+
+	AngularJS directives are markers on the DOM that tells the Angular compiler 
+	to attach behavior or transform the DOM element
+
+	Directives can be placed on the DOM as:
+		- Element directives
+		- Attribute directives
+		- CSS class directives
+		- Comment directives
+
+	Directives are used to get into the DOM instead of doing it in controllers
+
+	
+	
+Types of Directives
+
+	Element Directive
+		<product-description></product-description>
+	
+	Attribute Directive (appends to an element)
+		<H3 product-description></H3>
+
+	Comment Directive (a directive that gives information usually in testing)
+		<product-description></product-description>
+
+	Class Directive
+		<div class="product-description"></div> 
+		
+"dashes are conventionally directives that is an indicator that a directive is 
+being used"
+
+Built in Directives
+
+	AngularJS provides a bunch of built in directives
+	Some of these override built in HTML elements to provide additional functionality 
+	- like <form>
+	Other directives are visible through the ng- prefix
+
+	For example, ng-app is a directive to tell angular to instantiate the app here.
+	Ng-*** are the directives: ng-class, ng-repeat.
+
+Quick List of Angular Built in Directives
+
+	ng-href ng-src ng-disabled ng-checked ng-class ng-style ng-selected ng-app
+	ng-controller ng-show ng-hide ng-include
+
+	you can use ng-show for tabs
+	like ng-click="eventtab.setTab(0)" ng-click="eventtab.setTab(1)"
+	ng-show="(eventtab.tab==0)" ng-show="(eventtab.tab==0)"
+
+*directives don't run locally without some special port starts, only http and https browsers usually prevent*
+

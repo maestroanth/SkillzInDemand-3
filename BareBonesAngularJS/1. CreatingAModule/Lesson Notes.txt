@@ -1,0 +1,26 @@
+MVA Angular Lesson 1
+
+What are modules?
+
+	Containers for various parts of your applications (controllers, services, etc.) around a feature or functionality.
+
+	Declared so they are easy to understand - readable testable maintainable
+
+	Defines dependencies for our app
+
+
+Modules Setup
+
+	A module is comprised of configuration and run blocks
+
+	Configuration Blocks- executed during configuration and registration. Only providers and constants can be passed.
+
+	Run Blocks - happen after the injector is created. Only instances and constants can be passed in.
+
+	Some convenience methods for this
+
+	Run blocks is like a main method - it kickstarts the application
+
+	Modules can depend on other modules
+
+	They are only loaded once - when they are loaded they are stored in what's called a "registry" 

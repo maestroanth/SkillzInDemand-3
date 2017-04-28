@@ -1,4 +1,4 @@
-MVA Angular Tutorial 3
+MVA Angular Lesson 3
 
 What is an Expression?
 	Javascript code snippets placed in bindings {{Hello Biatches!}}
