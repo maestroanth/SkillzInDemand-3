@@ -1,0 +1,21 @@
+MVA Angular Lesson 5
+*NOTE: Routing lessons won't work unless I set up a localhost server at the very least*
+
+Pretty URLS
+	Pretty URLS get rid of the hashtag angular uses by default
+	To get clean URLs, configure $locationProvider and set base for relative urls (set to HTML5 to true)
+	Configuring $locationProvider, will use the HistoryAPI - resulting in clean urls 
+	HistoryAPI is to use with back button
+
+About UIRouter
+	Routing framework built by Angular team
+	Changes view based on application state, not just route URL
+	Can still use routing to change views with no URL change
+	UI-Router is separate and needs to be loaded
+	Links use ui-sref
+	Can change view based on application states (like if a folder is open or w/e)
+	Remember to include in library and as a dependency to use new providers
+
+	use only ng-router or ui-router no need to use both
+
+	The power of UIRouter is you can have nested states, i.e. home.selected
