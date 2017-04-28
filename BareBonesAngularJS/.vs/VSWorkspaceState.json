@@ -1,13 +1,14 @@
 {
   "ExpandedNodes": [
     "",
-    "\\1. CreatingAModule",
-    "\\2. Controllers",
-    "\\3. Expressions and Filters",
-    "\\4. Directives",
     "\\4. Directives\\app",
-    "\\4. Directives\\app\\event"
+    "\\4. Directives\\app\\event",
+    "\\5. Routing, View Management, and UI-Router\\app",
+    "\\5. Routing, View Management, and UI-Router\\app\\event",
+    "\\6. Factory, Provider, Services\\app",
+    "\\6. Factory, Provider, Services\\app\\data",
+    "\\6. Factory, Provider, Services\\app\\event"
   ],
-  "SelectedNode": "\\4. Directives\\Lesson Notes.txt",
+  "SelectedNode": "\\6. Factory, Provider, Services",
   "PreviewInSolutionExplorer": false
 }

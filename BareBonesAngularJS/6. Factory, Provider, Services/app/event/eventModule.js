@@ -3,7 +3,7 @@
 angular.module('eventModule', [])
     .factory('MainTitle', [function () {
         return {
-            title: "Educatin' Young Ones on the How-To's of Pimping Hoes and Bitches properly"
+            title: "Educatin' Young Ones on the How-To's of Pimping Hoes and Bitches properly" //notice how it just returns a value or result
         };
     }])
     .config([function () {
@@ -12,7 +12,7 @@ angular.module('eventModule', [])
     .run([function () {
         console.log("Event Module:: running");
     }])
-    .controller('BitchCtrl', ['$scope', 'MainTitle', function ($scope, mainTitle) {
+    .controller('BitchCtrl', ['$scope', '$http', 'MainTitle', function ($scope, $http, mainTitle) {
         //append properties to the scope
         $scope.title = mainTitle.title;
 
@@ -37,6 +37,16 @@ angular.module('eventModule', [])
             return ($scope.index);
         }
 
+        $scope.getData = function () {
+            var scope = $scope;
+            $http.get('app/data/bitches.json')//asynchonous transaction uses something called 'promises'
+                .success(function (data) {
+                    scope.bitches = data;
+                });
+        }
+
+        $scope.getData();
+        /*
         $scope.bitches = [
             {
                 name: "Yaya, some chick. Who fuckeen' cares about da bitch's name already!",
@@ -66,6 +76,7 @@ angular.module('eventModule', [])
                 moneyMade: "$32.50",
                 date: Date.parse("December 25 1893")
             }]
+        */
     }])
     .controller('BottomBitchCtrl', ['$scope', 'MainTitle', function ($scope, mainTitle) {
         $scope.title = "bottom bitch!";

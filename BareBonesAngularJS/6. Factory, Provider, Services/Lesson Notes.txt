@@ -1,1 +1,39 @@
 MVA Angular Lesson 6
+
+If it's not reading int .json make sure it's config to accept .json file types
+
+Getting External Data
+	$http = built in resource to make rest requests
+
+Service Components
+	Angular has many built in Service or Provider components
+	$anchorScroll, $http, $window, $timeout
+
+	Use the following to refactor code to help keep controllers lean:
+
+Services
+	Syntax: module.service('serviceName', function);
+	Result: When declaring serviceName as an injectable argument you will be provided with an instance of the function. I.e. new 'serviceName()'.
+
+Factories
+	Syntax: module.factory('factoryName', function);
+	Result: When declaring factoryName as an injectable argument you will be provided with the value that is returned by invoking the function 
+	reference passed to module.factory.
+
+Providers
+	Syntax: module.provider('providerName', function);
+	Result: When declaring providerName as an injectable argument you will be provided with ProviderFunction().$get(). The constructor function is
+	instantiated before the $get method is called - ProviderFunction is the function reference passed to module.provider.
+	Used in configuration
+
+What is a Provider?
+	Application wide business logic that does need to be configured
+	Twitter API, facebook login etc. where values are need to be configured before the service can work (typically APIs)
+
+What is a Service?
+	API that doesn't need configuration to work and just be called.
+
+	egghead.io for quick 3-minute need to know videos
+
+The guy at the end did tie is all together connecting this AngularJS Client to .Net MVC API to have it go roundtrip which I'll be
+probably doing as a final project to tie .net server and Angular Client frameworks altogether.
